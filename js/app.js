@@ -16,6 +16,23 @@ function modificarTituloConInnerHTML(){
     titulo.innerHTML = 'Texto usando <b>innerHTML</b>'
 }
 
+function ocultarTexto(){
+    console.log('desde la funcion ocultarTexto')
+    //buscar el titulo h5 de la card
+    const titulos = document.getElementsByClassName('card-title');
+    const botones = document.getElementsByTagName('button')
+    console.log(botones[4])
+    console.log(titulos[1])
+    //ocultar el titulo
+    if(botones[4].textContent === 'Ocultar texto' ){
+        titulos[1].classList.add('d-none')
+        botones[4].textContent = 'Mostrar texto'
+    }else{
+        titulos[1].classList.remove('d-none')
+        botones[4].textContent = 'Ocultar texto'
+    }
+}
+
 const btnCambiarTitulo = document.querySelector('#btnCambiarTituloInnerHTML')
 console.log(btnCambiarTitulo)
 
