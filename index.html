@@ -37,8 +37,15 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <button class="btn btn-outline-light" onclick="cambiarTheme()" id="btnCambiarTheme">
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarSupportedContent"
+          >
+            <button
+              class="btn btn-outline-light"
+              onclick="cambiarTheme()"
+              id="btnCambiarTheme"
+            >
               <i class="bi bi-circle-half"></i> Cambiar tema
             </button>
           </div>
@@ -46,78 +53,202 @@
       </nav>
     </header>
     <main class="container">
-        <section class="my-4 text-center">
-            <h1 class="display-4">Introducción al DOM con JavaScript</h1>
-            <p class="lead">El DOM es una representación del HTML como objetos en JavaScript. Nos permite modificar elementos en la página mientras se ejecuta.</p>
-        </section>
-        <section>
-            <h2>🔍 Selección de elementos</h2>
-            <p>Métodos del objeto document</p>
-            <ul>
-                <li><code>getElementById('id')</code> → Selecciona por ID.</li>
-                <li><code>getElementsByClassName('clase')</code> → Selecciona por clase.</li>
-                <li><code>getElementsByTagName('tag')</code> → Devuelve por tipo de etiqueta.</li>
-                <li><code>Devuelve por tipo de etiqueta.</code> → Devuelve el primer elemento que coincide.</li>
-                <li><code>querySelectorAll('selector')</code> → Devuelve todos los que coinciden.</li>
-            </ul>
-            <h3>✏️ Modificar contenido:</h3>
-            <ul>
-                <li><code>textContent</code> agrega texto plano (más seguro).</li>
-                <li><code>innerHTML</code> interpreta HTML (⚠️ vulnerable a XSS si no secontrola).</li>
-            </ul>
-            <h3>🎨 Manipular clases con classList:</h3>
-            <p>classList es una propiedad de los elementos DOM que permite trabajar fácilmente con las clases CSS. Devuelve un objeto con métodos útiles.</p>
-            <!-- agregar los metodos de classList -->
-        </section>
-        <section class="my-4">
-            <h2 class="display-5 text-center">Practica de DOM</h2>
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                          <h5 class="card-title" id="titulo">🌎Hola mundo</h5>
-                          <button class="btn btn-warning w-100  mt-3" onclick="modificarTitulo()">Cambiar titulo</button>
-                          <button class="btn btn-outline-warning w-100 mt-3" id="btnCambiarTituloInnerHTML">Cambiar titulo con innerHTML</button>
-                        </div>
-                      </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                          <h5 class="card-title">Ocultar un elemento del html</h5>
-                          <button class="btn btn-success w-100 mt-3" onclick="ocultarTexto()">Ocultar texto</button>
-                        </div>
-                      </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                          <h5 class="card-title" id="tituloEliminar">Eliminar un elemento del html</h5>
-                          <button class="btn btn-danger w-100 mt-3" id="btnEliminar" >Borrar titulo</button>
-                        </div>
-                      </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                          <form>
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Escribí tu nombre:</label>
-                                <input type="text" class="form-control" placeholder="Ej: juan perez" minlength="2" maxlength="50" required id="nombre">
-                            </div>
-                            <button class="btn btn-primary mb-3 w-100" type="submit">Mostrar el nombre</button>
-                            <p id="parrafoNombre">😎 Tu nombre es: </p>
-                          </form>
-                        </div>
-                      </div>
-                </div>
-
+      <section class="my-4 text-center">
+        <h1 class="display-4">Introducción al DOM con JavaScript</h1>
+        <p class="lead">
+          El DOM es una representación del HTML como objetos en JavaScript. Nos
+          permite modificar elementos en la página mientras se ejecuta.
+        </p>
+      </section>
+      <section>
+        <h2>🔍 Selección de elementos</h2>
+        <p>Métodos del objeto document</p>
+        <ul>
+          <li><code>getElementById('id')</code> → Selecciona por ID.</li>
+          <li>
+            <code>getElementsByClassName('clase')</code> → Selecciona por clase.
+          </li>
+          <li>
+            <code>getElementsByTagName('tag')</code> → Devuelve por tipo de
+            etiqueta.
+          </li>
+          <li>
+            <code>Devuelve por tipo de etiqueta.</code> → Devuelve el primer
+            elemento que coincide.
+          </li>
+          <li>
+            <code>querySelectorAll('selector')</code> → Devuelve todos los que
+            coinciden.
+          </li>
+        </ul>
+        <h3>✏️ Modificar contenido:</h3>
+        <ul>
+          <li><code>textContent</code> agrega texto plano (más seguro).</li>
+          <li>
+            <code>innerHTML</code> interpreta HTML (⚠️ vulnerable a XSS si no
+            secontrola).
+          </li>
+        </ul>
+        <h3>🎨 Manipular clases con classList:</h3>
+        <p>
+          classList es una propiedad de los elementos DOM que permite trabajar
+          fácilmente con las clases CSS. Devuelve un objeto con métodos útiles.
+        </p>
+        <!-- agregar los metodos de classList -->
+        <div class="container my-5">
+          <h3 class="mb-4">🧩 Métodos comunes de <code>classList</code></h3>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+              <thead class="table-secondary text-dark">
+                <tr>
+                  <th>Método</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>element.classList.add("clase")</code></td>
+                  <td>🟢 Añade una clase si no está presente.</td>
+                </tr>
+                <tr>
+                  <td><code>element.classList.remove("clase")</code></td>
+                  <td>🔴 Elimina una clase si está presente.</td>
+                </tr>
+                <tr>
+                  <td><code>element.classList.toggle("clase")</code></td>
+                  <td>
+                    🔁 Alterna una clase: si está, la quita; si no está, la
+                    agrega.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>element.classList.contains("clase")</code></td>
+                  <td>
+                    🔍 Devuelve <code>true</code> si el elemento tiene la clase.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>element.classList.replace("vieja", "nueva")</code>
+                  </td>
+                  <td>🔄 Reemplaza una clase existente por otra.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="my-4">
+        <h2 class="display-5 text-center">Practica de DOM</h2>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title" id="titulo">🌎Hola mundo</h5>
+                <button
+                  class="btn btn-warning w-100 mt-3"
+                  onclick="modificarTitulo()"
+                >
+                  Cambiar titulo
+                </button>
+                <button
+                  class="btn btn-outline-warning w-100 mt-3"
+                  id="btnCambiarTituloInnerHTML"
+                >
+                  Cambiar titulo con innerHTML
+                </button>
+              </div>
             </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Ocultar un elemento del html</h5>
+                <button
+                  class="btn btn-success w-100 mt-3"
+                  onclick="ocultarTexto()"
+                >
+                  Ocultar texto
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title" id="tituloEliminar">
+                  Eliminar un elemento del html
+                </h5>
+                <button class="btn btn-danger w-100 mt-3" id="btnEliminar">
+                  Borrar titulo
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="nombre" class="form-label"
+                      >Escribí tu nombre:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Ej: juan perez"
+                      minlength="2"
+                      maxlength="50"
+                      required
+                      id="nombre"
+                    />
+                  </div>
+                  <button class="btn btn-primary mb-3 w-100" type="submit">
+                    Mostrar el nombre
+                  </button>
+                  <p id="parrafoNombre">😎 Tu nombre es:</p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- todo: agregar lista de tareas -->
+      <section>
+        <section class="py-5 bg-body">
+          <div class="container">
+            <h2 class="text-center mb-4">📝 Agregar Tareas con JS</h2>
+            <form id="tareaForm" class="row g-3 justify-content-center">
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  id="tareaInput"
+                  class="form-control"
+                  placeholder="Ej: Terminar el tp de DOM y BOM..."
+                  required
+                />
+              </div>
+              <div class="col-md-auto">
+                <button type="submit" class="btn btn-success">
+                  Agregar tarea
+                </button>
+              </div>
+            </form>
+            <!-- list de tareas -->
+            <ul class="list-group mt-4">
+              <!-- las tareas se insertarán automaticamente -->
+              <li class="list-group-item ">
+                Tarea 1
+              </li>
+              <li class="list-group-item">Tarea 2</li>
+              <li class="list-group-item">Tarea 3</li>
+            </ul>
+          </div>
         </section>
-        <!-- todo: agregar lista de tareas -->
+      </section>
     </main>
     <footer class="bg-dark-subtle py-4 text-center">
-        <p>&copy; Todos los derechos reservados</p>
+      <p>&copy; Todos los derechos reservados</p>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
