@@ -33,8 +33,20 @@ function ocultarTexto(){
     }
 }
 
+function eliminarTitulo(){
+    const titulo = document.getElementById('tituloEliminar')
+    if(titulo){
+        titulo.remove();
+        btnEliminar.classList.add('disabled')
+    }
+    //if(null) = false
+    //if({a:1}) = true
+}
+
 const btnCambiarTitulo = document.querySelector('#btnCambiarTituloInnerHTML')
-console.log(btnCambiarTitulo)
+const btnEliminar = document.getElementById('btnEliminar')
+console.log(btnEliminar)
 
 //agregar un manejador de eventos
 btnCambiarTitulo.addEventListener('click', modificarTituloConInnerHTML)
+btnEliminar.addEventListener('click', eliminarTitulo )
