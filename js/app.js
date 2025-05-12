@@ -54,6 +54,15 @@ console.log(inputNombre.value)
  parrafo.textContent += inputNombre.value
 }
 
+function cambiarTheme(){
+    const html = document.documentElement;
+    const btnCambiarTheme = document.getElementById('btnCambiarTheme')
+    const themeActual = html.getAttribute('data-bs-theme')
+    //(condicion logica)? si es true : si es false
+    html.setAttribute('data-bs-theme', themeActual==='dark'? 'light': 'dark')  
+    themeActual==='dark'? btnCambiarTheme.className = 'btn btn-outline-dark' :  btnCambiarTheme.className = 'btn btn-outline-light' 
+}
+
 const btnCambiarTitulo = document.querySelector('#btnCambiarTituloInnerHTML')
 const btnEliminar = document.getElementById('btnEliminar')
 const formulario = document.querySelector('form')
