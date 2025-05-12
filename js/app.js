@@ -43,10 +43,23 @@ function eliminarTitulo(){
     //if({a:1}) = true
 }
 
+function mostrarNombre(e){
+ e.preventDefault(); //evitar que recargue la pagina   
+ const parrafo = document.getElementById('parrafoNombre')
+ const inputNombre = document.querySelector('input') // console.log(formulario.children[0].children[1]) 
+ //buscar el texto escrito en el input del form
+console.log(inputNombre.value)
+ //mostrar el texto en el parrafo
+//  parrafo.textContent = parrafo.textContent + inputNombre.value
+ parrafo.textContent += inputNombre.value
+}
+
 const btnCambiarTitulo = document.querySelector('#btnCambiarTituloInnerHTML')
 const btnEliminar = document.getElementById('btnEliminar')
-console.log(btnEliminar)
+const formulario = document.querySelector('form')
+console.log(formulario)
 
 //agregar un manejador de eventos
 btnCambiarTitulo.addEventListener('click', modificarTituloConInnerHTML)
 btnEliminar.addEventListener('click', eliminarTitulo )
+formulario.addEventListener('submit',mostrarNombre)
