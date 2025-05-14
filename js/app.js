@@ -63,12 +63,19 @@ function cambiarTheme(){
     themeActual==='dark'? btnCambiarTheme.className = 'btn btn-outline-dark' :  btnCambiarTheme.className = 'btn btn-outline-light' 
 }
 
+function agregarTarea(e){
+    e.preventDefault();
+    console.log('aqui deberia agregar una tarea')
+}
+
 const btnCambiarTitulo = document.querySelector('#btnCambiarTituloInnerHTML')
 const btnEliminar = document.getElementById('btnEliminar')
 const formulario = document.querySelector('form')
-console.log(formulario)
+const formularioTareas = document.querySelector('#tareaForm')
+console.log(formularioTareas)
 
 //agregar un manejador de eventos
 btnCambiarTitulo.addEventListener('click', modificarTituloConInnerHTML)
 btnEliminar.addEventListener('click', eliminarTitulo )
 formulario.addEventListener('submit',mostrarNombre)
+formularioTareas.addEventListener('submit', agregarTarea)
