@@ -66,6 +66,19 @@ function cambiarTheme(){
 function agregarTarea(e){
     e.preventDefault();
     console.log('aqui deberia agregar una tarea')
+    const lista = document.querySelector('.list-group')
+    //seleccionar el texto que el usuario escribio en el input.value
+    const tarea = document.querySelector('#tareaInput').value
+    //voy a crear un <li> con el texto del input
+    //insertar el li en el ul
+    // lista.innerHTML =  lista.innerHTML + `<li class="list-group-item ">
+    //             ${tarea}
+    //           </li>`
+    lista.innerHTML +=  `<li class="list-group-item ">
+                ${tarea}
+              </li>`
+    //limpiar el formulario
+    formularioTareas.reset();
 }
 
 const btnCambiarTitulo = document.querySelector('#btnCambiarTituloInnerHTML')
