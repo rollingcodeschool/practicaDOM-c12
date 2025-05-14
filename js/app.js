@@ -99,6 +99,22 @@ function agregarTarea(e){
     formularioTareas.reset();
 }
 
+function obtenerFecha(){
+    const fecha = new Date()
+    // console.log(fecha)
+    // console.log(fecha.getHours())
+    // console.log(fecha.getMinutes())
+    // console.log(fecha.getSeconds())
+
+    const segundos = fecha.getSeconds()<10 ? '0'+fecha.getSeconds(): fecha.getSeconds()
+
+    const hora = document.querySelector('#hora')
+    hora.textContent = `${fecha.getHours()}:${fecha.getMinutes()}:${ segundos }`
+}
+
+    
+
+
 const btnCambiarTitulo = document.querySelector('#btnCambiarTituloInnerHTML')
 const btnEliminar = document.getElementById('btnEliminar')
 const formulario = document.querySelector('form')
@@ -110,3 +126,24 @@ btnCambiarTitulo.addEventListener('click', modificarTituloConInnerHTML)
 btnEliminar.addEventListener('click', eliminarTitulo )
 formulario.addEventListener('submit',mostrarNombre)
 formularioTareas.addEventListener('submit', agregarTarea)
+
+//manejare el tiempo
+//setTimeout
+setTimeout(()=> {
+    const tituloSaludo =  document.querySelector('#saludo');
+    tituloSaludo.classList.remove('d-none')
+}, 2500);
+
+setInterval(obtenerFecha,1000);
+//setInterval
+// let contador = 1;
+// const idInterval = setInterval(()=> {
+//     document.writeln(`<p>Hola mundo 🎁<p>`)
+//     if(contador === 5){
+//         clearInterval(idInterval)
+//     }
+//     contador++
+// }
+//     , 2000)
+
+
